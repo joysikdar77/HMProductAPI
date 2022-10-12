@@ -25,7 +25,7 @@ namespace HMProductAPI.Controllers
             {
                 var product = _productsCRUDOperations.GetProduct(productId);
                 if (string.IsNullOrEmpty(product))
-                    return StatusCode(StatusCodes.Status404NotFound);
+                    return StatusCode(StatusCodes.Status404NotFound,"No Product available.");
                 return Ok(product);
             }
             catch (Exception ex)

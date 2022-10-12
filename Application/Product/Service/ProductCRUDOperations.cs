@@ -114,8 +114,10 @@ namespace Application.Product.Service
                         sizeVM.SizeName = sizeEntity.sizeName;
                         productVM.sizes.Add(sizeVM);
                     }
+
+                    return JsonConvert.SerializeObject(productVM);
                 }
-                return JsonConvert.SerializeObject(productVM);
+                return String.Empty;
                 //return productVM;
                 
             }
