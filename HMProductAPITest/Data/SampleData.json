@@ -1,0 +1,24 @@
+{
+  "productId": "11223344-5566-7788-99AA-BBCCDDEEFF00",
+  "productName": "product1",
+  "productCode": "2022001",
+  "sizeScaleId": "00000000-0000-0000-0000-000000000000",
+  "createDate": "2022-10-11 12:24:44.403",
+  "createdBy": "6B29FC40-CA47-1067-B31D-00DD010662DA",
+  "channelId": "1",
+  "articles": [
+    {
+      "articleId": "4B29HC40-CA47-1067-B31D-00DD010662HM",
+      "articleName": "product1-CL01",
+      "colourId": "6B29FC40-CA47-1012-B31D-00DD010662CF",
+      "colourCode": "CL01",
+      "colourName": "Blue"
+    }
+  ],
+  "sizes": [
+    {
+      "sizeId": "4B29HC40-CA47-1067-B31D-00DD010662HM",
+      "sizeName": "string"
+    }
+  ]
+}
