@@ -190,8 +190,10 @@ namespace Application.Product.Service
         }
         private string GenerateProductCode(ProductVM productVM)
         {
-            if(productVM.channelID == 1)
+            if(productVM.channelID == 1) 
             {
+                // this logic needs to be improved.. there is a probablity that at some point of time this productcode
+                // will conflict with channel id 3 productcode.. 
                 var lastCode = _dbContext.Products.Where(x => x.productYear == productVM.productYear && x.channelID == productVM.channelID).OrderByDescending(x => x.CreatedDate).FirstOrDefault();
                 if(lastCode != null)
                 {

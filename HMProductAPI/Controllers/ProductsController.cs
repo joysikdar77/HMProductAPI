@@ -45,15 +45,15 @@ namespace HMProductAPI.Controllers
                 productVM.createdBy = oid;
                 var status = _productsCRUDOperations.AddProduct(productVM);
                 if (status.statusCode == HttpStatusCode.Created)
-                    return Ok(productVM.productID);
+                    return Ok(status);
                 else
                 {
                     if (status.statusCode == HttpStatusCode.BadRequest)
-                        return StatusCode(StatusCodes.Status400BadRequest, status.statusMessage);
+                        return StatusCode(StatusCodes.Status400BadRequest, status);
                     if (status.statusCode == HttpStatusCode.NotAcceptable)
-                        return StatusCode(StatusCodes.Status406NotAcceptable,status.statusMessage);
+                        return StatusCode(StatusCodes.Status406NotAcceptable,status);
                     else
-                        return StatusCode(StatusCodes.Status400BadRequest,status.statusMessage);
+                        return StatusCode(StatusCodes.Status400BadRequest,status);
                     
                 }
             }
