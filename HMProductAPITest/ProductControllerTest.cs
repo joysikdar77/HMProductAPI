@@ -46,9 +46,10 @@ namespace HMProductAPITest
             //arrange
             Guid id = new Guid("11223344-5566-7788-99AA-BBCCDDEEFF01");
             var product = getStaticProduct();
+            var StatusVM = new StatusVM();
             product.productID = id;
             _productCrudOp.Setup(x => x.AddProduct(product))
-                .Returns(HttpStatusCode.OK);
+                .Returns(StatusVM);
             var productsController = new ProductsController(_productCrudOp.Object);
 
             //act
