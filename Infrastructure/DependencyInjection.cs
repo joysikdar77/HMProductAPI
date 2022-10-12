@@ -1,4 +1,5 @@
 ﻿using Application.Common.Interfaces;
+using Application.Common.Service;
 using Application.Product.Interface;
 using Application.Product.Service;
 using Infrastructure.Persistence;
@@ -19,10 +20,10 @@ namespace Infrastructure
                 b => b.MigrationsAssembly(typeof(ApplicationDBContext).Assembly.FullName)), ServiceLifetime.Transient);
 
             services.AddScoped<IApplicationDBContext>(provider => provider.GetService<ApplicationDBContext>());
-            services.AddScoped<IColourCRUDOperations, IColourCRUDOperations>();
+            services.AddScoped<IColourCRUDOperations, ColourCRUDOperations>();
             services.AddScoped<ISizeCRUDOperations, SizeCRUDOperations>();
             services.AddScoped<IProductCRUDOperations, ProductCRUDOperations>();
-            services.AddScoped<IExternalAPIService, IExternalAPIService>();
+            services.AddScoped<IExternalAPIService, ExternalAPIService>();
             return services;
         }
     }
